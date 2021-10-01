@@ -47,3 +47,34 @@
         animation-delay: 0.3s;
     }
 }
+
+.btn-inline {
+    margin-top: 0.5rem;
+    border: none;
+    color: $color-primary-dark;
+    font-style: inherit;
+    border-bottom: 1px solid currentColor;
+    padding-bottom: 2px;
+    display: inline-block;
+    background-color: transparent;
+    font-size: 1.3rem;
+    cursor: pointer;
+    transition: all 0.2s;
+    & span {
+        margin-left: 0.3rem;
+        transition: margin-left 0.2s;
+    }
+    &:hover {
+        color: #fff;
+        padding: 0.5rem;
+        box-shadow: 0 2rem 6rem rgba(0, 0, 0, 0.3);
+        background-color: $color-primary-dark;
+        span {
+            margin-left: 0.8rem;
+        }
+    }
+    &:focus {
+        outline: none;
+        animation: pulsate 1s infinite;
+    }
+}
