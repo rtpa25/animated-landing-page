@@ -43,3 +43,49 @@
         }
     }
 }
+
+.section-features {
+    padding: 20rem 0;
+    background-image: linear-gradient(to right, rgba($color-primary-light, 0.767), rgba($color-primary-dark, 0.938)), url('../img/nat-4.jpg');
+    background-size: cover;
+    background-position: top;
+    margin-top: -10rem;
+    transform: skewY(-5deg);
+    &>* {
+        transform: skewY(5deg);
+    }
+}
+
+.row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 0 10rem;
+    border-radius: 0.3rem;
+    .col {
+        .feature-box {
+            margin: 0rem 2rem;
+            padding: 2.5rem;
+            box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.15);
+            background-color: rgba(#fff, .8);
+            transition: transform .90sec ease;
+            &__text {
+                font-size: 1.5rem;
+                letter-spacing: 0.03rem;
+                margin-bottom: 2rem;
+            }
+            &__icon {
+                font-size: 6rem;
+                margin-bottom: 0.5rem;
+                display: inline-block;
+                background-image: linear-gradient(to right, $color-primary-light, $color-primary-dark);
+                background-clip: text;
+                color: transparent;
+            }
+            &:hover {
+                transform: translateY(-1.3rem) scale(1.05);
+            }
+        }
+    }
+}
