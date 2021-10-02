@@ -1,6 +1,11 @@
 .btn {
     background-color: $color-primary;
+    & span {
+        margin-left: 0.3rem;
+        transition: margin-left 0.2s;
+    }
     color: #fff;
+    &,
     &:link,
     &:visited {
         text-decoration: none;
@@ -11,10 +16,15 @@
         transition: all 0.6s;
         position: relative;
         font-size: 1.6rem;
+        border: none;
+        cursor: pointer;
     }
     &:hover {
         transform: translateY(-0.3rem);
         box-shadow: 0 1rem 2rem rgba($color-black, 0.2);
+        span {
+            margin-left: 0.8rem;
+        }
     }
     &:active {
         transform: translateY(-0.1rem);
@@ -57,7 +67,7 @@
 }
 
 .btn-inline {
-    margin-top: 0.5rem;
+    margin-top: 3.5rem;
     border: none;
     color: $color-primary-dark;
     font-style: inherit;
@@ -65,7 +75,7 @@
     padding-bottom: 2px;
     display: inline-block;
     background-color: transparent;
-    font-size: 1.3rem;
+    font-size: 2rem;
     cursor: pointer;
     transition: all 0.2s;
     & span {
