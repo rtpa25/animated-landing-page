@@ -1,11 +1,13 @@
 .btn {
+    background-color: $color-primary;
+    color: #fff;
     &:link,
     &:visited {
         text-decoration: none;
         text-transform: uppercase;
         padding: 1.5rem 3rem;
         border-radius: 10rem;
-        display: inline-block;
+        // display: inline-block;
         transition: all 0.6s;
         position: relative;
         font-size: 1.6rem;
@@ -20,7 +22,7 @@
     }
     &::after {
         content: "";
-        display: inline-block;
+        // display: inline-block;
         height: 100%;
         width: 100%;
         border-radius: 10rem;
@@ -37,14 +39,20 @@
     &--white {
         background-color: #fff;
         color: $color-grey-dark;
+        animation: moveInBottom 1.3s ease-out;
+        animation-fill-mode: backwards;
+        animation-delay: 0.3s;
         &::after {
             background-color: #fff;
         }
     }
     &--animated {
-        animation: moveInBottom 1.3s ease-out;
-        animation-fill-mode: backwards;
-        animation-delay: 0.3s;
+        // animation: moveInBottom 1.3s ease-out;
+        // animation-fill-mode: backwards;
+        // animation-delay: 0.3s;
+        &::after {
+            background-color: $color-primary;
+        }
     }
 }
 

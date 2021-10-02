@@ -1,91 +1,221 @@
-.section-about {
-    background-color: $color-grey-light-1;
-    padding: 25rem 0;
-    margin-top: -20vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    .description {
+    .section-about {
+        background-color: $color-grey-light-1;
+        padding: 25rem 0;
+        margin-top: -20vh;
         display: flex;
-        .gallery {
-            flex: 0 0 55%;
-            margin-right: 10rem;
-            z-index: 1;
-            transition: all 0.2s;
-            outline-offset: 2rem;
-            &__photo {
-                width: 40%;
-                box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.4);
-                position: relative;
-                &--p1 {
-                    left: 15rem;
-                    top: 4rem;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        .description {
+            display: flex;
+            .gallery {
+                flex: 0 0 55%;
+                margin-right: 10rem;
+                z-index: 1;
+                transition: all 0.2s;
+                outline-offset: 2rem;
+                &__photo {
+                    width: 40%;
+                    box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.4);
+                    position: relative;
+                    &--p1 {
+                        left: 15rem;
+                        top: 4rem;
+                    }
+                    &--p2 {
+                        top: 10rem;
+                        left: 10rem;
+                    }
+                    &--p3 {
+                        left: 25rem;
+                        bottom: 1rem;
+                    }
+                    &:hover {
+                        outline: 1.5rem solid $color-primary;
+                        transform: scale(1.1) translateY(0.5rem);
+                        box-shadow: 0 2.5rem 4rem rgba(0, 0, 0, 0.5);
+                        z-index: 2;
+                    }
                 }
-                &--p2 {
-                    top: 10rem;
-                    left: 10rem;
+                &:hover &__photo:not(:hover) {
+                    transform: scale(0.8);
                 }
-                &--p3 {
-                    left: 25rem;
-                    bottom: 1rem;
+            }
+        }
+    }
+    
+    .section-features {
+        padding: 20rem 0;
+        background-image: linear-gradient(to right, rgba($color-primary-light, 0.767), rgba($color-primary-dark, 0.938)), url('../img/nat-4.jpg');
+        background-size: cover;
+        background-position: top;
+        margin-top: -10rem;
+        transform: skewY(-5deg);
+        &>* {
+            transform: skewY(5deg);
+        }
+    }
+    
+    .row {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        padding: 0 10rem;
+        border-radius: 0.3rem;
+        .col {
+            .feature-box {
+                margin: 0rem 2rem;
+                padding: 2.5rem;
+                box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.15);
+                background-color: rgba(#fff, .8);
+                transition: transform .90sec ease;
+                &__text {
+                    font-size: 1.5rem;
+                    letter-spacing: 0.03rem;
+                    margin-bottom: 2rem;
+                }
+                &__icon {
+                    font-size: 6rem;
+                    margin-bottom: 0.5rem;
+                    display: inline-block;
+                    background-image: linear-gradient(to right, $color-primary-light, $color-primary-dark);
+                    background-clip: text;
+                    color: transparent;
                 }
                 &:hover {
-                    outline: 1.5rem solid $color-primary;
-                    transform: scale(1.1) translateY(0.5rem);
-                    box-shadow: 0 2.5rem 4rem rgba(0, 0, 0, 0.5);
-                    z-index: 2;
+                    transform: translateY(-1.3rem) scale(1.05);
                 }
             }
-            &:hover &__photo:not(:hover) {
-                transform: scale(0.8);
+        }
+    }
+    
+    .section-tours {
+        background-color: $color-grey-light-1;
+        padding: 25rem 0 10rem 0;
+        margin-top: -8vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        &__rows {
+            display: flex;
+            transition: all 0.8s ease-in-out; // this beutifies the animation and makes it scale up toward the parent
+        }
+        &__card {
+            perspective: 150rem;
+            box-shadow: 0 2.5rem 4rem rgba(0, 0, 0, 0.15);
+            position: relative;
+            background-color: $color-grey-light-1;
+            width: 30rem;
+            height: 50rem;
+            margin: 3rem;
+            margin-bottom: 10rem;
+            overflow: hidden;
+            transition: all 0.8s ease-in-out;
+            &:hover .front {
+                transform: rotateY(-180deg);
+            }
+            &:hover .back {
+                transform: rotateY(0deg);
+            }
+            .front {
+                width: 30rem;
+                position: absolute;
+                height: 50rem;
+                top: 0;
+                left: 0;
+                backface-visibility: hidden;
+            }
+            .back {
+                width: 30rem;
+                position: absolute;
+                height: 50rem;
+                top: 0;
+                left: 0;
+                transform: rotateY(180deg);
+                backface-visibility: hidden;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                .price-box {
+                    color: #fff;
+                    text-align: center;
+                    margin-bottom: 5rem;
+                    .price-only {
+                        font-size: 1.5rem;
+                        text-transform: uppercase;
+                        font-weight: 400;
+                    }
+                    .price-value {
+                        font-size: 6.5rem;
+                        font-weight: 200;
+                    }
+                }
+            }
+            .b1 {
+                background-image: linear-gradient(to right bottom, $color-secondary-light, $color-secondary-dark);
+            }
+            .c1 {
+                background-image: linear-gradient(to right, rgba($color-secondary-light, 0.6), rgba($color-secondary-dark, 0.3)), url('../img/nat-5.jpg');
+            }
+            .b2 {
+                background-image: linear-gradient(to right bottom, $color-primary-light, $color-primary-dark);
+            }
+            .c2 {
+                background-image: linear-gradient(to right, rgba($color-primary-light, 0.5), rgba($color-primary-dark, 0.3)), url('../img/nat-6.jpg');
+            }
+            .b3 {
+                background-image: linear-gradient(to right bottom, $color-tertiary-light, $color-tertiary-dark);
+            }
+            .c3 {
+                background-image: linear-gradient(to right, rgba($color-tertiary-light, 0.6), rgba($color-tertiary-dark, 0.1)), url('../img/nat-7.jpg');
+            }
+            .card-header {
+                background-size: cover;
+                background-position: top;
+                clip-path: polygon(0 0, 100% 0, 100% 80%, 0 100%);
+                height: 20rem;
+                z-index: 0;
+                &__text {
+                    font-size: 2.5rem;
+                    text-transform: uppercase;
+                    font-weight: 600;
+                    color: $color-grey-light-1;
+                    text-align: right;
+                    position: absolute;
+                    top: 9rem;
+                    right: 2rem;
+                    z-index: 20;
+                    &--comp {
+                        padding: 1rem;
+                        background-image: linear-gradient(to right bottom, rgba($color-secondary-light, 0.767), rgba($color-secondary-dark, 0.938));
+                    }
+                    .co-2 {
+                        background-image: linear-gradient(to right bottom, rgba($color-primary-light, 0.76), rgba($color-primary-dark, 0.9));
+                    }
+                    .co-3 {
+                        background-image: linear-gradient(to right bottom, rgba($color-tertiary-light, 0.767), rgba($color-tertiary-dark, 0.938));
+                    }
+                }
+            }
+            .card-features {
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                align-items: center;
+                font-size: 1.4rem;
+                font-weight: 400;
+                color: $color-grey-dark;
+                .feature {
+                    margin: 1.5rem;
+                }
+                hr {
+                    width: 70%;
+                    border-top: 0.001rem solid $color-grey-dark-1;
+                    border-bottom: 0rem;
+                }
             }
         }
     }
-}
-
-.section-features {
-    padding: 20rem 0;
-    background-image: linear-gradient(to right, rgba($color-primary-light, 0.767), rgba($color-primary-dark, 0.938)), url('../img/nat-4.jpg');
-    background-size: cover;
-    background-position: top;
-    margin-top: -10rem;
-    transform: skewY(-5deg);
-    &>* {
-        transform: skewY(5deg);
-    }
-}
-
-.row {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    padding: 0 10rem;
-    border-radius: 0.3rem;
-    .col {
-        .feature-box {
-            margin: 0rem 2rem;
-            padding: 2.5rem;
-            box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.15);
-            background-color: rgba(#fff, .8);
-            transition: transform .90sec ease;
-            &__text {
-                font-size: 1.5rem;
-                letter-spacing: 0.03rem;
-                margin-bottom: 2rem;
-            }
-            &__icon {
-                font-size: 6rem;
-                margin-bottom: 0.5rem;
-                display: inline-block;
-                background-image: linear-gradient(to right, $color-primary-light, $color-primary-dark);
-                background-clip: text;
-                color: transparent;
-            }
-            &:hover {
-                transform: translateY(-1.3rem) scale(1.05);
-            }
-        }
-    }
-}
