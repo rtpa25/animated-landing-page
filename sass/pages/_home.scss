@@ -100,19 +100,20 @@
         align-items: center;
         &__rows {
             display: flex;
-            transition: all 0.8s ease-in-out; // this beutifies the animation and makes it scale up toward the parent
+            // this beutifies the animation and makes it scale up toward the parent
         }
         &__card {
             perspective: 150rem;
             box-shadow: 0 2.5rem 4rem rgba(0, 0, 0, 0.15);
             position: relative;
-            background-color: $color-grey-light-1;
+            background-color: transparent;
             width: 30rem;
+            display: flex;
             height: 50rem;
             margin: 3rem;
             margin-bottom: 10rem;
             overflow: hidden;
-            transition: all 0.8s ease-in-out;
+            transition: transform 0.8s;
             &:hover .front {
                 transform: rotateY(-180deg);
             }
@@ -126,6 +127,7 @@
                 top: 0;
                 left: 0;
                 backface-visibility: hidden;
+                // transition: transform 0.8s;
             }
             .back {
                 width: 30rem;
@@ -134,6 +136,7 @@
                 top: 0;
                 left: 0;
                 transform: rotateY(180deg);
+                // transition: transform 0.8s;
                 backface-visibility: hidden;
                 display: flex;
                 flex-direction: column;
